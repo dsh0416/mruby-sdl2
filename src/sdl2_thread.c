@@ -64,36 +64,36 @@ typedef struct mrb_sdl2_thread_param_t {
 static int
 mrb_sdl2_thread_function(void *data)
 {
-  mrb_value ret;
-  struct kh_n2s *name2sym;
-  mrb_state *thread_mrb;
-  mrb_sdl2_thread_param_t *param =
-    (mrb_sdl2_thread_param_t*)data;
-  mrb_state *mrb = param->mrb;
-  mrb_value  proc = param->proc;
+  //mrb_value ret;
+  //struct kh_n2s *name2sym;
+  //mrb_state *thread_mrb;
+  //mrb_sdl2_thread_param_t *param =
+  //  (mrb_sdl2_thread_param_t*)data;
+  //mrb_state *mrb = param->mrb;
+  //mrb_value  proc = param->proc;
 
-  mrb_free(mrb, param);
+  //mrb_free(mrb, param);
 
-  /* open new RiteVM instance */
-  thread_mrb = mrb_open_allocf(mrb->allocf, mrb->ud);
+  ///* open new RiteVM instance */
+  //thread_mrb = mrb_open_allocf(mrb->allocf, mrb->ud);
 
-  /* back up each field to bring back after. */
-  name2sym = thread_mrb->name2sym;
+  ///* back up each field to bring back after. */
+  //name2sym = thread_mrb->name2sym;
 
-  /* set shared fields. */
-  thread_mrb->name2sym  = mrb->name2sym;
+  ///* set shared fields. */
+  //thread_mrb->name2sym  = mrb->name2sym;
 
-  ret = mrb_yield(thread_mrb, proc, mrb_nil_value());
+  //ret = mrb_yield(thread_mrb, proc, mrb_nil_value());
 
-  /* bring back each fields. */
-  thread_mrb->name2sym  = name2sym;
+  ///* bring back each fields. */
+  //thread_mrb->name2sym  = name2sym;
 
-  /* shut down the VM */
-  mrb_close(thread_mrb);
+  ///* shut down the VM */
+  //mrb_close(thread_mrb);
 
-  if (mrb_type(ret) == MRB_TT_FIXNUM) {
-    return mrb_fixnum(ret);
-  }
+  //if (mrb_type(ret) == MRB_TT_FIXNUM) {
+  //  return mrb_fixnum(ret);
+  //}
   return 0;
 }
 
