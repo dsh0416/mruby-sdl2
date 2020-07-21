@@ -8,9 +8,15 @@
 #include "mruby/data.h"
 #include "mruby/string.h"
 #include "mruby/array.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_video.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_version.h>
+#else
 #include <SDL_video.h>
 #include <SDL_render.h>
 #include <SDL_version.h>
+#endif
 
 struct RClass *mod_Video    = NULL;
 struct RClass *class_Window = NULL;

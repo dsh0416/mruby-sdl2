@@ -2,8 +2,13 @@
 #define MRUBY_SDL2_PIXELS_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_pixels.h>
+#else
 #include <SDL_stdinc.h>
 #include <SDL_pixels.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

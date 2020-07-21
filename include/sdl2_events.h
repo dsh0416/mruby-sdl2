@@ -2,7 +2,12 @@
 #define MRUBY_SDL2_EVENTS_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_events.h>
+#else
 #include <SDL_events.h>
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {

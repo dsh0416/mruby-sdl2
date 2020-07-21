@@ -25,8 +25,13 @@
 #include "sdl2_clipboard.h"
 #include "misc.h"
 #include "mruby/string.h"
+#ifdef __APPLE__
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_platform.h>
+#else
 #include <SDL.h>
 #include <SDL_platform.h>
+#endif
 #include <string.h>
 
 struct RClass *mod_SDL2        = NULL;

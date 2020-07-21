@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_RWOPS_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_rwops.h>
+#else
 #include <SDL_rwops.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

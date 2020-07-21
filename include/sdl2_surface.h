@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_SURFACE_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_surface.h>
+#else
 #include <SDL_surface.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

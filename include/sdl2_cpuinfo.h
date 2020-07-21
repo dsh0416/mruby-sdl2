@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_CPUINFO_H
 
 #include "sdl2.h"
-#include <SDL_cpuinfo.h>
+#ifdef __APPLE__
+#include <SDL2/SDL_cpuinfo.h>
+#else
+#include <SDL_clipboard.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

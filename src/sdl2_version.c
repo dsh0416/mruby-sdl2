@@ -3,7 +3,11 @@
 #include "mruby/data.h"
 #include "mruby/class.h"
 #include "mruby/string.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_revision.h>
+#else
 #include <SDL_revision.h>
+#endif
 
 static struct RClass *class_Version = NULL;
 

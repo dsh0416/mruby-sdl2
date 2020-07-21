@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_VERSION_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_version.h>
+#else
 #include <SDL_version.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

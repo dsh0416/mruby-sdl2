@@ -2,7 +2,11 @@
 #include "sdl2_video.h"
 #include "mruby/class.h"
 #include "mruby/data.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_video.h>
+#else
 #include <SDL_video.h>
+#endif
 
 static struct RClass *mod_GL            = NULL;
 static struct RClass *class_GLContext   = NULL;

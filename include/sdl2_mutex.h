@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_MUTEX_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_mutex.h>
+#else
 #include <SDL_mutex.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

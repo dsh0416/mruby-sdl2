@@ -2,8 +2,13 @@
 #define MRUBY_SDL2_RENDER_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_rect.h>
+#else
 #include <SDL_render.h>
 #include <SDL_rect.h>
+#endif
 
 typedef struct pixelbuf_data_t {
   SDL_Rect rect;

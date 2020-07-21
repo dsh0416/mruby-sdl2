@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_AUDIO_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_audio.h>
+#else
 #include <SDL_audio.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

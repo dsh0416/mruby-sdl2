@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_TIMER_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_timer.h>
+#else
 #include <SDL_timer.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

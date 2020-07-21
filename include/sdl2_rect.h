@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_RECT_H
 
 #include "sdl2.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_rect.h>
+#else
 #include <SDL_rect.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

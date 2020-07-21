@@ -3,7 +3,11 @@
 #include "mruby/class.h"
 #include "mruby/data.h"
 #include "mruby/array.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_video.h>
+#else
 #include <SDL_video.h>
+#endif
 
 static struct RClass *class_DisplayMode = NULL;
 

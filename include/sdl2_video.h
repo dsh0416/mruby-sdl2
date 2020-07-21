@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_VIDEO_H
 
 #include "mruby.h"
+#ifdef __APPLE__
+#include <SDL2/SDL_video.h>
+#else
 #include <SDL_video.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

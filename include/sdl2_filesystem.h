@@ -2,7 +2,11 @@
 #define MRUBY_SDL2_FILESYSTEM_H
 
 #include "sdl2.h"
-#include <SDL_filesystem.h>
+#ifdef __APPLE__
+#include <SDL2/SDL_filesystem.h>
+#else
+#include <SDL_events.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
